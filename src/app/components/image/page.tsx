@@ -1,7 +1,7 @@
 "use client";
 import Wrapper from "@/src/components/device-detection-demo/ui/Wrapper";
 import Image from "next/image";
-import { ChangeEvent, useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export default function Page() {
   const [isLoading, setIsLoading] = useState(false);

@@ -10,6 +10,17 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --animate-loading-status: loading 2s ease-out
+
+  @keyframes loading {
+    0% {
+      background-
+    }
+    100% {
+
+    }
+    
+  }
 }
 
 @media (prefers-color-scheme: dark) {
@@ -24,3 +35,4 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
