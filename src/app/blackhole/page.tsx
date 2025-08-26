@@ -10,7 +10,7 @@ export default function Page() {
     >
       <div className="text-white font-bold text-2xl flex flex-col">
         <Link href="https://codepen.io/mathemartica/pen/EaxvqEK">
-          Grok's Blackhole
+          Grok&apos;s Blackhole
         </Link>
         <Link href="https://codepen.io/StarKnightt/pen/VYvZeom">
           Interactive Blackhole By Prasenjit

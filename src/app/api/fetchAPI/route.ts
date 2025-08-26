@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 
-export async function GET(req: NextRequest, res: NextResponse) {
+export async function GET(req: NextRequest) {
     const offset = req.nextUrl.searchParams.get('offset');
   const response = await fetch(
     `https://api.myanimelist.net/v2/anime/ranking?ranking_type=all&limit=4&offset=${offset}`,
