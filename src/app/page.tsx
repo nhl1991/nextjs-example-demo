@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <div className="w-full h-full flex items-center justify-center">
       <div className="flex flex-wrap p-4 gap-2">
-        <LinkContainer link="https://vercel.com/rohhyungraes-projects/position-playground" />
+        <LinkContainer link="https://position-playground.vercel.app" />
         <LinkContainer link="/device-detection-demo" />
         <LinkContainer link="/copy-paste" />
         <LinkContainer link="/hooks" />
