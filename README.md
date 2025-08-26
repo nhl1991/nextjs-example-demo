@@ -1,5 +1,6 @@
 
-# Project Name
+# Nextjs-example-demo
+<img width="1326" height="825" alt="image" src="https://github.com/user-attachments/assets/2763e125-ed74-40f7-8696-02674e2447b6" />
 
 ## 📖 Overview
 This project was developed to study Next.js, CSS.
@@ -20,10 +21,10 @@ Example: Next.JS hooks, File convention, Image Component, etc..
 ## 🚀 Getting Started
 ```bash
 # Clone repository
-git clone <GitHub-Repo-URL>
+git clone https://github.com/nhl1991/nextjs-example-demo.git
 
 # Change directory
-cd <Project-Name>
+cd nextjs-example-demo
 
 # Install dependencies
 npm install
