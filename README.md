@@ -1,3 +1,36 @@
+
+# Project Name
+
+## 📖 Overview
+This project was developed to study Next.js, CSS.
+Example: Next.JS hooks, File convention, Image Component, etc..
+
+## 🛠 Tech Stack
+- **Framework / Library**: Next.js, React
+- **Language**: TypeScript, HTML5, CSS3  
+- **Database**: None  
+
+## 📌 Implemented Examples
+- Explored several ways to detect user devices (e.g., User-Agent, responsive design).
+- Practiced positioning techniques with CSS to better understand layout behavior.
+- Learned and applied the `sizes` property of the `<Image>` component in Next.js for responsive image optimization.
+
+
+
+## 🚀 Getting Started
+```bash
+# Clone repository
+git clone <GitHub-Repo-URL>
+
+# Change directory
+cd <Project-Name>
+
+# Install dependencies
+npm install
+
+# Run development server
+npm run dev
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
@@ -30,3 +63,5 @@ To learn more about Next.js, take a look at the following resources:
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
 ## Deploy 
+
+https://nextjs-example-demo.vercel.app/
