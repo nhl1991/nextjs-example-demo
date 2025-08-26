@@ -3,7 +3,7 @@ export default function Wrapper({ children }: { children: React.ReactNode }) {
 
 
     return(
-        <div className="w-full h-full shadow-2xl shadow-black flex items-center justify-center">
+        <div className="shadow-lg rounded-2xl px-4 shadow-black/50">
             {children}
         </div>
     )

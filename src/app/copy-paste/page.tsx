@@ -28,7 +28,7 @@ export default function Page() {
             })
 
         } catch (error) {
-            console.error("Err");
+            console.error(error);
         }
     }
 

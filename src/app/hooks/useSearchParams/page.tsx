@@ -21,7 +21,7 @@ export default function Page() {
         <ComponentName>useSearchParams</ComponentName>
         <p className="px-4 py-1">
           useSearchParams is a Client Component hook that lets you read the
-          current URL's query string. useSearchParams returns a read-only
+          current URL&apos;s query string. useSearchParams returns a read-only
           version of the URLSearchParams interface.
         </p>
         <div className="w-full">

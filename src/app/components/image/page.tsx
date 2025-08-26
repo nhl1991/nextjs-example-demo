@@ -29,7 +29,7 @@ export default function Page() {
     const onResize = () => updateDPR();
     window.addEventListener("resize", onResize);
     return () => window.removeEventListener("resize", onResize);
-  }, [imageRef.current]);
+  });
 
   return (
     <Wrapper>
