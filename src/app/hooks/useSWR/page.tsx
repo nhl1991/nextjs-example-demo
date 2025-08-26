@@ -19,7 +19,7 @@ interface Data {
   ranking: Ranking;
 }
 
-export const fetcher = (url: string) =>
+const fetcher = (url: string) =>
   fetch(url, {
     method: "GET",
   }).then((res) => res.json());
