@@ -6,7 +6,7 @@ import { useEffect, useRef, useState } from "react";
 export default function Page() {
   const [isLoading, setIsLoading] = useState(false);
   const [currentSrc, setCurrentSrc] = useState<string>("");
-  const [ viewport, setViewport ] = useState<number>(0);
+  const [viewport, setViewport] = useState<number>(0);
   const [dpr, setDpr] = useState(1);
   const imageRef = useRef<HTMLImageElement>(null);
   //   if (imageRef.current) {
@@ -16,8 +16,8 @@ export default function Page() {
   //   }
   useEffect(() => {
     if (!window || !imageRef.current) return;
-    if(window.visualViewport)
-    setViewport(window.visualViewport?.width)
+    if (window.visualViewport)
+      setViewport(window.visualViewport?.width)
     const img = imageRef.current;
 
     const updateDPR = () => {
@@ -29,13 +29,13 @@ export default function Page() {
     const onResize = () => updateDPR();
     window.addEventListener("resize", onResize);
     return () => window.removeEventListener("resize", onResize);
-  },[setViewport]);
+  }, [setViewport]);
 
   return (
     <Wrapper>
       <div className="w-full h-full items-center justify-center">
-        <div className="w-full h-full p-4 relative">
-          <div className="aspect-[16/9] relative bg-red-700 p-2">
+        <div className="w-full h-full p-4 relative flex items-center justify-center gap-2 xl:flex-row flex-col ">
+          <div className="w-full max-w-[36rem] h-[48rem] aspect-[16/9] relative p-2">
             <Image
               ref={imageRef}
               className="object-contain"
@@ -47,21 +47,21 @@ export default function Page() {
             />
           </div>
           {isLoading ? (
-            <div className="absolute top-4 p-2 rounded-2xl bg-gray-300/80">
-              <div className="w-minoverflow-scroll">
-                
-                <div className="flex max-w-full flex-wrap">
-                    <p>srcset : </p>
-                  {imageRef.current
-                    ? imageRef.current.srcset.split(",").map((item, index) => {
+            <div className="max-w-[32rem] w-full text-[clamp(1rem,1vw+0.7rem,1.25rem)] p-2 rounded-2xl bg-gray-800/80 text-white">
+              <div>
+                <div>
+                  <p>srcset</p>
+                  <div className="flex flex-wrap p-2">
+                    {imageRef.current
+                      ? imageRef.current.srcset.split(",").map((item, index) => {
                         if (
                           imageRef.current &&
                           imageRef.current.currentSrc.split("&")[1] ===
-                            item.split("&")[1]
+                          item.split("&")[1]
                         )
                           return (
                             <p
-                              className="bg-sky-400 text-white px-2 py-0.5 rounded-xl"
+                              className="bg-sky-400 px-2 py-0.5 rounded-xl"
                               key={index}
                             >
                               {item.split("&")[1]}
@@ -73,7 +73,8 @@ export default function Page() {
                           </p>
                         );
                       })
-                    : "-"} {"(Default srcset provided by next.js)"}
+                      : "-"} {"(Default srcset provided by next.js)"}
+                  </div>
                 </div>
               </div>
               <p>
@@ -86,11 +87,11 @@ export default function Page() {
               <p>viewport : {viewport}</p>
               <p>
                 SlotWidth:{" "}
-                {viewport * 20 /100}px {"(Viewport * sizes / 100)"}
+                {viewport * 20 / 100}px {"(Viewport * sizes / 100)"}
               </p>
               <p>
                 Expected-w:{" "}
-                First element that is bigger than {viewport * 20 /100 * dpr}px in srcset.
+                First element that is bigger than {viewport * 20 / 100 * dpr}px in srcset.
               </p>
               <p>
                 NaturalWidth:{" "}
@@ -101,14 +102,14 @@ export default function Page() {
                 ClientWidth:{" "}
                 {imageRef.current ? imageRef.current.clientWidth : "-"}
               </p>
-              
+
               <p>
                 Effective DPR≈{" "}
                 {imageRef.current ? currentSrc.split("&")[1] : "-"};
               </p>
               <div className="px-4">
-              <p>{'* slotWidth = viewport * sizes/100 (ex. viewport = 1280px, sizes = 20vw slot-width : 1280px * 20vw / 100 = 256px '}</p>
-              <p>{`* slotWidth * DPR =< srcset slot-width is 256px and DPR is 2, 256*2 is 512px. Browser choose the bigger than 512px in srcset. In this example, Result is w640.`}</p>
+                <p>{'* slotWidth = viewport * sizes/100 (ex. viewport = 1280px, sizes = 20vw slot-width : 1280px * 20vw / 100 = 256px '}</p>
+                <p>{`* slotWidth * DPR =< srcset slot-width is 256px and DPR is 2, 256*2 is 512px. Browser choose the bigger than 512px in srcset. In this example, Result is w640.`}</p>
               </div>
             </div>
           ) : null}
