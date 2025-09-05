@@ -24,7 +24,8 @@ export default function Pokemon() {
     const [hasMore, setHasMore] = useState(true);
     const [loading, setLoading] = useState(false);
     const abortRef = useRef<AbortController | null>(null);
-    // 중복 호출 방지 + 이전 요청 취소
+    
+
     const loadMore = useCallback(async () => {
         if (loading || !hasMore) return;
         abortRef.current?.abort();
@@ -34,7 +35,7 @@ export default function Pokemon() {
         setLoading(true);
         try {
             const page = await fetchPage(cursor, ac.signal);
-            // 중복 방지: 기존 id 집합 체크
+            
             const existing = new Set(items.map(i => i.name));
             const merged = [...items, ...page.results.filter((i: Pokemon) => !existing.has(i.name))];
             setItems(merged);
@@ -69,13 +70,13 @@ export default function Pokemon() {
                         <p ref={sentinelRef}>{loading ? 'Loading...' : 'More'}</p>
                     </div>
                 ) : (
-                    <p style={{ textAlign: "center", padding: 16 }}>끝!</p>
+                    <p className="text-base p-4">End of Contents</p>
                 )}
             </div>
 
 
 
-            {loading && <p style={{ textAlign: "center" }}>로딩중…</p>}
+            {loading && <p className="text-base p-4">Loading...</p>}
         </div>
     );
 
