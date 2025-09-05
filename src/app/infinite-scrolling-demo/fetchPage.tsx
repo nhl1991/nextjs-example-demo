@@ -52,16 +52,16 @@ export default function Pokemon() {
     return (
         <div className="w-full h-full overflow-hidden">
             <div className="w-full h-full flex flex-col items-center overflow-scroll">
-                <ul className="max-w-[50%] w-full grid grid-cols-4 auto-rows-[min(240px)] gap-5">
+                <ul className="max-w-[50%] w-full grid grid-cols-[repeat(4,min(240px))] auto-rows-[min(240px)] gap-5">
                     {items.map((pokemon,idx:number) =>
-                        <li key={pokemon.name} className="w-full h-full flex flex-col relative  border-2 rounded-2xl">
+                        <li key={pokemon.name} className="w-full h-full flex flex-col relative">
                             <div className="h-full absolute text-7xl px-2 py-1"><h1>{idx+1}</h1></div>
-                            <div className="relative w-full h-full">
+                            <div className="relative w-full h-full hover:scale-120 duration-500">
                                 <Image src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemon.url.split("/")[6]
-                                    }.png`} sizes="(max-width:768px) 100vw, 33vw" fill alt={pokemon.name} className="object-contain" />
+                                    }.png`} priority={idx < 20 ? true : false} sizes="(max-width:768px) 100vw, 33vw" fill alt={pokemon.name} className="object-contain" />
                             </div>
                             <div>
-                                <p className="text-xl text-center">{pokemon.name}</p>
+                                <p className="text-xl text-center font-semibold">{pokemon.name.toUpperCase()}</p>
                             </div>
                         </li>)}
                 </ul>
