@@ -13,6 +13,7 @@ export default function Home() {
         <LinkContainer link="/components" />
         <LinkContainer link="/file-convention" />
         <LinkContainer link="/blackhole" />
+        <LinkContainer link="/infinite-scrolling-demo" />
         
       </div>
     </div>
