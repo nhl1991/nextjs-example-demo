@@ -14,6 +14,8 @@ export default function Home() {
         <LinkContainer link="/file-convention" />
         <LinkContainer link="/blackhole" />
         <LinkContainer link="/infinite-scrolling-demo" />
+        <LinkContainer link="/intersectionObserver" />
+        <LinkContainer link="/tanstack-infinite-scroll" />
         
       </div>
     </div>
