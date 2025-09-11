@@ -59,19 +59,18 @@ function Example() {
     <>
       <div className="w-full min-h-full">
         <div className="w-full px-2">
-            <ul className="flex gap-2">
+            <ul className="flex gap-2 items-center justify-center">
                 <li><button onClick={()=>setRankingType('all')}>ALL</button></li>
                 <li><button onClick={()=>setRankingType('airing')}>AIRING</button></li>
                 <li><button onClick={()=>setRankingType('upcoming')}>UPCOMING</button></li>
                 <li><button onClick={()=>setRankingType('tv')}>TV</button></li>
-                <li>{ranking_type}</li>
             </ul>
         </div>
         {data
           ? data.pages.map((group, idx) => (
               <div
                 key={idx}
-                className="w-full h-full grid grid-cols-[repeat(5,minmax(240px,1fr))] grid-rows-[repeat(2,minmax(240px,320px))] gap-2 p-2"
+                className="w-full h-full grid grid-cols-[repeat(1,minmax(240px,1fr))] grid-rows-[repeat(10,minmax(240px,320px))] md:grid-cols-[repeat(5,minmax(240px,1fr))] md:grid-rows-[repeat(2,minmax(240px,320px))] gap-2 p-2"
               >
                 {group.data.map((item: Item) => (
                   <Animation key={item.node.id} node={item.node} ranking={item.ranking} />

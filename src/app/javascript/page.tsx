@@ -7,10 +7,7 @@ export default function Page() {
   return (
     <div className="w-full h-full flex items-center justify-center">
       <div className="flex flex-wrap gap-4">
-        <LinkContainer link={pathname + `/useSearchParams`} />
-        <LinkContainer link={pathname + `/usePathname`} />
-        <LinkContainer link={pathname + `/useSWR`} />
-        <LinkContainer link={pathname + `/difference-between-useRef-useState`} />
+        <LinkContainer link={pathname + `/variable`} />
       </div>
     </div>
   );
