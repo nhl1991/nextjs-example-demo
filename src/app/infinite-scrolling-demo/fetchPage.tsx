@@ -55,7 +55,7 @@ export default function Pokemon() {
                 <ul className="md:max-w-[50%] w-full grid grid-cols-3 md:grid-cols-[repeat(3,min(240px))] auto-rows-[min(240px)] gap-5">
                     {items.map((pokemon,idx:number) =>
                         <li key={pokemon.name} className="w-full h-full flex flex-col relative">
-                            <div className="h-full absolute text-7xl px-2 py-1"><h1>{idx+1}</h1></div>
+                            <div className="h-full absolute text-7xl px-2 py-1 bg-gradient-to-tr from-white via-sky-200 to-sky-500 bg-clip-text fill-transparent text-transparent"><h1>{idx+1}</h1></div>
                             <div className="relative w-full h-full hover:scale-120 duration-500">
                                 <Image src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemon.url.split("/")[6]
                                     }.png`} priority={idx < 20 ? true : false} sizes="(max-width:768px) 100vw, 33vw" fill alt={pokemon.name} className="object-contain" />
