@@ -1,6 +1,3 @@
-
-
-
 /**
  * BLOCK SCOPE
  * JavaScriptには3種類の変数宣言「var・let・const」がある。
@@ -25,29 +22,24 @@
  * └─ Block Scope (Global直下の { } )
  */
 
-var out_VAR = 0;
-let out_LET = 1;
-const out_CONST = 2;
+// var out_VAR = 0;
+// let out_LET = 1;
+// const out_CONST = 2;
 
-if (true) {
-  console.log(out_VAR, out_LET, out_CONST); //可能。
-  var block_VAR = 9;
-  let block_LET = 0;
-  const block_CONST = 1;
-}
+// if (true) {
+//   console.log(out_VAR, out_LET, out_CONST); //可能。
+//   var block_VAR = 9;
+//   let block_LET = 0;
+//   const block_CONST = 1;
+// }
 
+// console.log(block_VAR); //「var」は関数スコープに従うため、ブロックの外からでも参照可能である。
+// console.log(block_LET, block_CONST); //ReferenceError
 
-console.log(block_VAR); //「var」は関数スコープに従うため、ブロックの外からでも参照可能である。
-console.log(block_LET, block_CONST); //ReferenceError
+// function VariableExample() {
+//   var func_VAR = 0;
+//   let func_LET = 1;
+//   const func_CONST = 2;
+// }
 
-
-
-function VariableExample() {
-  var func_VAR = 0;
-  let func_LET = 1;
-  const func_CONST = 2;
-}
-
-console.log(func_VAR, func_LET, func_CONST); //ReferenceError
-
-
+// console.log(func_VAR, func_LET, func_CONST); //ReferenceError

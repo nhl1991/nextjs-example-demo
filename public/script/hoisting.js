@@ -3,8 +3,11 @@
  * Hoistingとは、変数宣言が関数スコープの先頭に引き上げられる仕組みを指す。
  * そのため、宣言より前にアクセスできるように見える。
  *
- * ただし、「var」「let」「const」すべてHoistingされるが、
- * 「let」「const」はTDZ(Temporal Dead Zone)の間は参照できない。
+ * ただし、var・let・const、すべてHoistingされるが、
+ * let、constはTDZ(Temporal Dead Zone)の間は参照できない。
+ * 
+ * 
+ * 
  */
 
 console.log(hoisting_var);
