@@ -41,6 +41,27 @@ const hoisting_const = 'This will return Reference Error'; `}</Code>
         結果: ReferenceError: Cannot access 'hoisting_const' before
         initialization
       </Text>
+      <Text>関数のHositing</Text>
+      <Text>
+        関数宣言
+        はホイスティングされるため、宣言より前でも呼び出すことができます。
+      </Text>
+      <Code>{`
+      foo()
+      function foo(){
+        //This function willbe hoisted.
+      }
+      `}</Code>
+      <Text>
+        でも、関数式（function
+        expression）は変数に代入される形になるため、ホイスティングはされますが、宣言前に呼び出すとエラーになります。
+      </Text>
+      <Code>{`
+        bar(); // ✅ OK (but undefined, not a function)
+        var bar = () => {
+        console.log("hello");
+        };
+      `}</Code>
     </Details>
   );
 }

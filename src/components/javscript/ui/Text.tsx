@@ -1,6 +1,6 @@
 "use client";
 
-export default function Text({ children }: { children: React.ReactNode }) {
+export default function P({ children }: { children: React.ReactNode }) {
 
     return(
         <div className="p-2">

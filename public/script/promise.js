@@ -61,8 +61,23 @@ const myPromise = new Promise((resolve, reject)=>{
     else resolve('Promiseから出た値') // この場合、Promiseの状態は「Fullfilled」
 })
 
-//then()は
-
+//　then() には、成功時に呼び出される resolve 用のコールバックと、失敗時に呼び出される reject 用のコールバックを渡すことができます。
 myPromise.then( data => console.log(data), err => console.log('Error : ',err)).catch( err => console.log(err));
+//　ならば、then()でrejectを処理する場合とcatch()で処理する場合は何が違います？
+// 1. then()で処理する場合、その時点のrejectだけを処理します。
+// 例えば、Promise.then(_, onRejected).then().then() の場合、
+// 最初のthen()でエラーが発生すればrejectを処理しますが、
+// 2番目や3番目のthen()でエラーが発生しても処理しません。
+// でも、Promise.then().then().then().catch() のように
+// チェーンの最後でcatchを用いれば、それまでのすべてのrejectをまとめて処理できますし、
+// 可読性も高く、処理の流れも直感的に理解できます。
+
+
+//Promiseの「race」と「all」
+//Promise.all()は
+
+
+
+
 
 
