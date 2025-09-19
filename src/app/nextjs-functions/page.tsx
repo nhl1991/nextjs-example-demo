@@ -1,7 +1,5 @@
 'use client'
-import PageTItle from "@/src/components/PageTitle";
 import LinkContainer from "@/src/components/ui/LinkContainer";
-import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 export default function Page() {
