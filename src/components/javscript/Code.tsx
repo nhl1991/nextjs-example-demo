@@ -1,3 +1,5 @@
+import P from "./ui/Text"
+
 export default function Code({ children }: { children: React.ReactNode }) {
   return (
     <div className="p-4">
