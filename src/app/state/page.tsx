@@ -8,6 +8,7 @@ export default function Page() {
         <main className="w-screen h-screen flex items-center justify-center">
             <div>
                 <LinkContainer link="/react-redux" />
+                <LinkContainer link="/zustand" />
             </div>
         </main>
     )

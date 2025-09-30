@@ -1,5 +1,5 @@
 'use client'
-import { configureStore } from '@reduxjs/toolkit'
+import { configureStore } from '@reduxjs/toolkit' // RTK is already written in TypeScript, and its API is designed to provide a good experience for TypeScript usage.
 
 import counterReducer from '@/src/redux/feature/counter/counterSlice'
 
