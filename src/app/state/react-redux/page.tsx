@@ -9,7 +9,7 @@ export default function Page() {
 
     return (
         <main className="w-screen h-screen flex  items-center justify-center">
-            <Provider store={store}>
+            <Provider store={store} >
                 <Counter />
             </Provider>
         </main>
