@@ -6,7 +6,6 @@ import { useEffect, useLayoutEffect, useState } from "react";
 export default function Page() {
 
     const [count, setCount] = useState(0);
-    const [message, setMessage] = useState<Array<string>>([]);
     const route = useRouter();
     console.log('Page.tsx : This message printed before browser rendering.');
     useLayoutEffect(() => {
