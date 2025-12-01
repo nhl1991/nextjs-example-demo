@@ -1,52 +1,72 @@
-'use client'
-import { useEffect, useState } from "react";
+"use client";
+import LinkContainer from "@/src/components/ui/LinkContainer";
+import {
+  Dispatch,
+  SetStateAction,
+  useEffect,
+  useLayoutEffect,
+  useState,
+} from "react";
 
-export default function Page(){
+export default function Page() {
+  const [text, setText] = useState("");
+  const [hasCounter, setHasCounter] = useState(true);
+  //   useLayoutEffect(() => {
+  //     window.alert("👈 useLayoutEffect 실행");
+  //     console.log("Component Mounted but browser does not painted it.");
+  //   }, []);
+  useEffect(() => {
+    console.log("Page Rendered.");
+  }, []);
 
-    const [count,setCount] = useState(0);
+  return (
+    <section className="w-screen h-screen flex flex-col items-center justify-center">
+      {hasCounter ? <Counter setText={setText} /> : null}
+      <p>{text}</p>
 
-    console.log('Out of useEffect', count);
+      <button
+        className="rounded-xl px-4 py-2 bg-sky-500 hover:bg-sky-700"
+        onClick={() => setHasCounter(!hasCounter)}
+      >
+        COUNTER {hasCounter ? "OFF" : "ON"}
+      </button>
 
-    useEffect(()=>{
-        console.log('Inside of useEffect')
 
-        return () => alert('Leave this page.')
-    },[])
+      <nav>
+        <ul className="flex gap-4 p-2">
+          <li>
+            <LinkContainer link="/example-fetch" />
+          </li>
 
-
-    return(
-        <section className="w-screen h-screen flex flex-col items-center justify-center">
-            <h1>{count}</h1>
-            <button onClick={()=>setCount((prev)=> prev+1)}>Count up</button>
-            <ParentNode />
-        </section>
-    )
+          <li>
+            <LinkContainer link="/fetch-with-useEffect-best-practice" />
+          </li>
+        </ul>
+      </nav>
+    </section>
+  );
 }
 
-function ParentNode(){
-    console.log('==> out of parent useEffect')
+function Counter({ setText }: { setText: Dispatch<SetStateAction<string>> }) {
+  const [counter, setCounter] = useState(0);
 
-    useEffect(()=>{
-        console.log('==> Parent Rendered!')
-    })
+  useEffect(() => {
+    window.alert(
+      "Counter componet effect is executed before Browser paint the component on Browser"
+    );
+    setText("Rendered from Counter");
 
-    return(
-        <div className="bg-sky-500">
-            <h1>Parent</h1>
-            <ChildrenNode />
-        </div>
-    )
-}
-function ChildrenNode(){
-    console.log('==> out of child useEffect')
+    return () => setText("Clean up from Counter");
+  }, []);
 
-    useEffect(()=>{
-        console.log('==> Children Rendered!')
-    })
-
-    return(
-        <div className="bg-sky-500">
-            <h1>Children</h1>
-        </div>
-    )
+  return (
+    <div className="flex items-center justify-center p-2">
+      
+      <div className="flex gap-2">
+        <p>{counter}</p>
+        <button onClick={() => setCounter((prev) => prev + 1)}>ADD</button>
+        <button onClick={() => setCounter((prev) => prev - 1)}>SUBTRACT</button>
+      </div>
+    </div>
+  );
 }

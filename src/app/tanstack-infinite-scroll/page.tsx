@@ -4,6 +4,7 @@ import { queryClient } from "./queryClient";
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
 
+
 type Item = {
   node: {
     id: number;
@@ -20,11 +21,13 @@ type Item = {
 
 export default function Page() {
   return (
-    <div className="w-screen h-screen">
-      <QueryClientProvider client={queryClient}>
-        <Example />
-      </QueryClientProvider>
-    </div>
+
+      <div className="w-screen h-screen">
+        <QueryClientProvider client={queryClient}>
+          <Example />
+        </QueryClientProvider>
+      </div>
+
   );
 }
 
@@ -34,7 +37,7 @@ function Example() {
     return res.json();
   };
 
-  const [ranking_type, setRankingType] = useState<string>('all');
+  const [ranking_type, setRankingType] = useState<string>("all");
   const {
     data,
     error,
@@ -49,7 +52,9 @@ function Example() {
     initialPageParam: `/ranking?ranking_type=${ranking_type}&limit=10&offset=0`,
     getNextPageParam: (lastPage) => lastPage.paging.next.split("/")[5],
   });
-  useEffect(()=>{},[ranking_type])
+  useEffect(() => {
+    return setRankingType('all');
+  }, [ranking_type]);
 
   return status === "pending" ? (
     <p>Loading...</p>
@@ -59,12 +64,22 @@ function Example() {
     <>
       <div className="w-full min-h-full">
         <div className="w-full px-2">
-            <ul className="flex gap-2 items-center justify-center">
-                <li><button onClick={()=>setRankingType('all')}>ALL</button></li>
-                <li><button onClick={()=>setRankingType('airing')}>AIRING</button></li>
-                <li><button onClick={()=>setRankingType('upcoming')}>UPCOMING</button></li>
-                <li><button onClick={()=>setRankingType('tv')}>TV</button></li>
-            </ul>
+          <ul className="flex gap-2 items-center justify-center">
+            <li>
+              <button onClick={() => setRankingType("all")}>ALL</button>
+            </li>
+            <li>
+              <button onClick={() => setRankingType("airing")}>AIRING</button>
+            </li>
+            <li>
+              <button onClick={() => setRankingType("upcoming")}>
+                UPCOMING
+              </button>
+            </li>
+            <li>
+              <button onClick={() => setRankingType("tv")}>TV</button>
+            </li>
+          </ul>
         </div>
         {data
           ? data.pages.map((group, idx) => (
@@ -73,7 +88,11 @@ function Example() {
                 className="w-full h-full grid grid-cols-[repeat(1,minmax(240px,1fr))] grid-rows-[repeat(10,minmax(240px,320px))] md:grid-cols-[repeat(5,minmax(240px,1fr))] md:grid-rows-[repeat(2,minmax(240px,320px))] gap-2 p-2"
               >
                 {group.data.map((item: Item) => (
-                  <Animation key={item.node.id} node={item.node} ranking={item.ranking} />
+                  <Animation
+                    key={item.node.id}
+                    node={item.node}
+                    ranking={item.ranking}
+                  />
                 ))}
               </div>
             ))
@@ -82,6 +101,7 @@ function Example() {
 
       <div className="w-full flex items-center justify-center">
         <button
+          className="button-hover"
           onClick={() => fetchNextPage()}
           disabled={!hasNextPage || isFetching}
         >
@@ -97,14 +117,24 @@ function Example() {
   );
 }
 
-function Animation({ node, ranking }: { node:{id:number, title:string, main_picture:{medium: string, large:string}},ranking:{rank: number} }) {
-
+function Animation({
+  node,
+  ranking,
+}: {
+  node: {
+    id: number;
+    title: string;
+    main_picture: { medium: string; large: string };
+  };
+  ranking: { rank: number };
+}) {
   const [isHover, setIsHover] = useState<boolean>(false);
-
+  useEffect(() => {
+    console.log(node.title, " rendered.");
+  }, []);
   return (
     <div
       className="w-full h-full relative"
-
       onMouseEnter={() => setIsHover(true)}
       onMouseLeave={() => setIsHover(false)}
     >

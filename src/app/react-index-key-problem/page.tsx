@@ -36,9 +36,9 @@ export default function Page() {
           </div>
         ))}
       </div>
-      <div>
-        <button onClick={Insert}>Insert X</button>
-        <button onClick={Remove}>Remove First</button>
+      <div className="flex gap-x-4 gap-y-2">
+        <button className="button-hover" onClick={Insert}>Insert X</button>
+        <button className="button-hover" onClick={Remove}>Remove First</button>
       </div>
       <Demo />
     </div>

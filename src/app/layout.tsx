@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Link from "next/link";
 
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -14,8 +15,10 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Laslark1991's Next.js Demo",
-  description: "Learn, Study, Try Everything",
+  title: "Laslark1991の記録",
+  description: "学び、探求し、すべてに挑戦する",
+  
+  
 };
 
 export default function RootLayout({
@@ -28,6 +31,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased w-screen h-screen flex flex-col items-center relative`}
       >
+
         <nav className="w-full h-max flex items-center justify-center">
           <Link href={"/"} className="p-1 hover:opacity-80">
             <svg
@@ -50,6 +54,7 @@ export default function RootLayout({
           <h1 className="font-bold text-[2rem] p-1">Next.js Demos</h1>
         </nav>
         <main className="w-full h-full">
+
         {children}
         </main>
       </body>
