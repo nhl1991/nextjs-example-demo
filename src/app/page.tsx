@@ -5,9 +5,7 @@ export default function Home() {
   return (
     <div className="w-full h-full flex items-center justify-center">
       <div className="max-w-[48rem] flex flex-wrap p-4 gap-2">
-        <LinkContainer link="/javascript" />
         <LinkContainer link="https://position-playground.vercel.app" />
-        <LinkContainer link="https://css-study-nine.vercel.app/" />
         <LinkContainer link="/device-detection-demo" />
         <LinkContainer link="/copy-paste" />
         <LinkContainer link="/hooks" />
@@ -18,7 +16,7 @@ export default function Home() {
         <LinkContainer link="/intersectionObserver" />
         <LinkContainer link="/tanstack-infinite-scroll" />
         <LinkContainer link="/react-index-key-problem" />
-        
+        <LinkContainer link="/css" />
       </div>
     </div>
   );
