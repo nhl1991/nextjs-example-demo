@@ -43,3 +43,15 @@ body {
 .blend {
   @apply mix-blend-lighten text-black bg-white/80;
 }
+
+/* https://blog.rhostem.com/posts/2021-05-12-linear-gradient-text */
+.border-gradient {
+  @apply bg-gradient-to-r from-pink-500 to-blue-500 duration-500 transition-all ease-linear;
+
+  
+}
+.border-gradient:hover {
+  @apply animate-pulse;
+
+  
+}
