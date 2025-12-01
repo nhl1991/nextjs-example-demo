@@ -20,6 +20,7 @@ export default function Home() {
         <LinkContainer link="/intersectionObserver" />
         <LinkContainer link="/tanstack-infinite-scroll" />
         <LinkContainer link="/react-index-key-problem" />
+        <LinkContainer link="/css" />
       </div>
 
     </div>
