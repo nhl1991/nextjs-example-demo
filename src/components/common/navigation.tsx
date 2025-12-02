@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 export default function Navigation() {
   const router = useRouter();
   return (
-    <nav className="w-full h-max flex items-center justify-center fixed">
+    <nav className="w-full h-max flex items-center justify-center fixed z-50">
       <button className="p-1 hover:opacity-80 cursor-pointer" onClick={() => router.back()}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
