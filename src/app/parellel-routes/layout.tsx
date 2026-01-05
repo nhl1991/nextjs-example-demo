@@ -1,6 +1,5 @@
 import React, { Suspense } from "react";
 import Skeleton from "./_skeleton/Skeleton";
-import Link from "next/link";
 
 export default function ParellerLayout({
   children,

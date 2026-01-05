@@ -28,7 +28,7 @@ export default function Page() {
             sizes="(max-width: 768px) 10vw, 5vw"
           />
         </figure>
-        <Link href={`/dynamic-segment/${segment}`} className="font-serif italic rounded-xl bg-sky-400 hover:bg-sky-800 px-3 py-1">"GOING DYNAMIC"</Link>
+        <Link href={`/dynamic-segment/${segment}`} className="font-serif italic rounded-xl bg-sky-400 hover:bg-sky-800 px-3 py-1">&quot;GOING DYNAMIC&quot;</Link>
       </div>:<div className="h-10"></div>}
     </div>
   );
