@@ -1,4 +1,7 @@
 import Link from "next/link";
+export const dynamic = "force-dynamic";
+export const revalidate = 0;
+
 
 export default async function Slot() {
   await new Promise((r) => setTimeout(r, 5000));
