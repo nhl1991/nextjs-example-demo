@@ -17,6 +17,8 @@ export default function Home() {
         <LinkContainer link="/tanstack-infinite-scroll" />
         <LinkContainer link="/react-index-key-problem" />
         <LinkContainer link="/css" />
+        <LinkContainer link="/dynamic-segment" />
+        <LinkContainer link="/parellel-routes" />
       </div>
     </div>
   );
